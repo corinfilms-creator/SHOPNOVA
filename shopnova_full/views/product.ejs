@@ -1,0 +1,15 @@
+
+<h1><%= product.name %></h1>
+<img src="<%= product.image %>" width="200"/>
+<p>$<%= product.price %></p>
+<button onclick="order()">Buy</button>
+
+<script>
+function order(){
+ fetch('/order',{
+  method:'POST',
+  headers:{'Content-Type':'application/json'},
+  body:JSON.stringify({cart:[{name:"<%= product.name %>",price:<%= product.price %>,quantity:1}]})
+ }).then(()=>alert("Order placed"));
+}
+</script>

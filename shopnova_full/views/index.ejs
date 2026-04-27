@@ -1,0 +1,13 @@
+
+<h1>ShopNova</h1>
+<a href="/seed">Load Demo Products</a>
+<div>
+ <% products.forEach(p=>{ %>
+  <div>
+    <img src="<%= p.image %>" width="150"/>
+    <h3><%= p.name %></h3>
+    <p>$<%= p.price %></p>
+    <a href="/product/<%= p._id %>">View</a>
+  </div>
+ <% }) %>
+</div>
